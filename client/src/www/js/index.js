@@ -45,7 +45,18 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    }
+    },
+	showAlert: function() {
+		if ( navigator && navigator.notification ) {
+			navigator.notification.alert("Example alert", function(e) {
+				console.log("Alert dismissed", e);
+			}, "Alert title", "Alert button");
+		} else {
+			alert( "fall back to normal alert" );
+		}
+
+		return false;
+	}
 };
 
 app.initialize();

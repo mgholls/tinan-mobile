@@ -1,1 +1,5 @@
 platforms/
+plugins/
+
+# Include the platform.json files
+!plugins/*
